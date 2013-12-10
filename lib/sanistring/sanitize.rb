@@ -4,9 +4,9 @@ module Sanistring
     sanitized = name.split('').map{ |char|
       if opts[:replace] && opts[:replace][char]
         opts[:replace][char]
-      elsif opts[:whitelist].is_a?(Fixnum)
+      elsif opts[:whitelist].is_a?(Symbol)
         case opts[:whitelist]
-        when List::AlphaNumeric
+        when :alpha_numeric, :alphanumeric
           char if !!(/[a-zA-Z0-9]/ =~ char)
         else
           nil

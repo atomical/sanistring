@@ -19,7 +19,13 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-  Sanistring.sanitize('../path/to/some/file', whitelist: 'abcdefghijklmnop')
+
+  # alphanumeric
+  Sanistring.sanitize('../path/to/some/file', whitelist: :alphanumeric)
+
+  # custom whitelist
+  Sanistring.sanitize('../path/to/some/file', whitelist: '+-*/=')
+
 ```
 
 ## Contributing
